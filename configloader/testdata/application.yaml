@@ -1,0 +1,19 @@
+test:
+   var: yaml
+extra.var: yaml
+
+slice.var:
+  - first
+  - second
+  - third
+
+flatten.yaml: flatten_yaml
+unflatten:
+  yaml: unflatten_yaml
+
+deep:
+  yaml:
+      level: unflatten_yaml_deep_level
+
+dbaas:
+  agent: http://dbaas-agent:8080

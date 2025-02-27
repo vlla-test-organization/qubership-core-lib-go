@@ -1,0 +1,5 @@
+log:
+  level:
+    package:
+      one: fatal
+      two: error
