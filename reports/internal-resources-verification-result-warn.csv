@@ -1,3 +1,0 @@
-./serviceloader/dummy_services.go,	logger = logging.GetLogger("dummy-services")
-./serviceloader/dummy_services.go,	logger.Info("Claim value 'nil' sent for key [%s] from dummy service", key)
-./.gitignore,# JIRA plugin
