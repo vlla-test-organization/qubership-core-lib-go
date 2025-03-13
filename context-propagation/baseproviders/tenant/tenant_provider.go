@@ -36,10 +36,11 @@ func (tenantProvider TenantProvider) Provide(ctx context.Context, incomingData m
 	headerValue := incomingData[TenantHeader]
 	if headerValue == nil {
 		tenantFromHeader = ""
+		logger.DebugC(ctx, "[base tenant context] discovered request from user without Tenant header. Will be used tenant = %s", tenantFromHeader)
 	} else {
 		tenantFromHeader = headerValue.(string)
+		logger.DebugC(ctx, "[base tenant context] discovered request from user with Tenant header. Will be used tenant = %s", tenantFromHeader)
 	}
-	logger.DebugC(ctx, "Discovered anonymous request, will be used tenant = %s", tenantFromHeader)
 	return context.WithValue(ctx, TenantContextName, NewTenantContextObject(tenantFromHeader))
 }
 

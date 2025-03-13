@@ -19,6 +19,9 @@ const (
 
 	ServerHostnameProperty = "cloud.public.host"
 	DefaultServerHostname  = "unknown"
+
+	DefaultHttpGatewayUrl  = "http://internal-gateway-service:8080"
+	DefaultHttpsGatewayUrl = "https://internal-gateway-service:8443"
 )
 
 func SelectUrl(httpUrl string, httpsUrl string) string {

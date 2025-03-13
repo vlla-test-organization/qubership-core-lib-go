@@ -2,6 +2,7 @@ package tenant
 
 import (
 	"context"
+	"fmt"
 	"github.com/netcracker/qubership-core-lib-go/v3/context-propagation/ctxmanager"
 	"github.com/pkg/errors"
 )
@@ -9,6 +10,11 @@ import (
 type TenantContextObject struct {
 	tenant string
 }
+
+type TenantProviderI interface {
+	GetTenantId(ctx context.Context) string
+}
+
 
 const (
     TenantContextName = "Tenant-Context"
@@ -32,6 +38,15 @@ func (contextObject TenantContextObject) Serialize() (map[string]string, error) 
 	} else {
 		return nil, nil
 	}
+}
+
+func (contextObject TenantContextObject) GetTenantId(ctx context.Context) string {
+	fmt.Printf("ctx: %v", ctx)
+	if tenantContextObj, err := Of(ctx); err == nil {
+		fmt.Printf("GetTenantId: %v", tenantContextObj.GetTenant())
+		return tenantContextObj.GetTenant()
+	}
+	return "-"
 }
 
 func Of(ctx context.Context) (*TenantContextObject, error) {

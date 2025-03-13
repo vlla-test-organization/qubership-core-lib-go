@@ -54,12 +54,18 @@ var sortedContextProviders []ContextProvider
 // This function in not thread safe. It is prohibited to register and read contexts in the same time.
 func Register(providers []ContextProvider) {
 	for _, provider := range providers {
+		contextName := provider.ContextName()
+		if contextProviders[contextName] != nil && contextProviders[contextName].InitLevel() > provider.InitLevel() {
+			logger.Debug("context=%s  were skipped with level:%v", provider.ContextName(), provider.InitLevel())
+			break
+		}
 		contextProviders[provider.ContextName()] = provider
 		logger.Debug("context=" + provider.ContextName() + " registered")
 	}
 	var allProviders []ContextProvider
 	for _, provider := range contextProviders {
 		allProviders = append(allProviders, provider)
+		logger.Info("context=" + provider.ContextName() + " added")
 	}
 	sortedContextProviders = sortByInitLevel(allProviders)
 	logger.Info("contexts successfully registered")

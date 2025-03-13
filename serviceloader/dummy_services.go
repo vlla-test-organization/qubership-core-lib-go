@@ -12,9 +12,10 @@ var logger logging.Logger
 
 type TokenProvider interface {
 	GetToken(ctx context.Context) (string, error)
-	ValidateToken() func(ctx context.Context, token string) (*jwt.Token, error)
+	ValidateToken(ctx context.Context, token string) (*jwt.Token, error) 
 	GetClaimValue(token *jwt.Token, key string) (interface{}, error)
 	IsSecured() bool
+	GetTokenAttribute(ctx context.Context, claim string) (string, error)
 }
 
 type Token struct {
@@ -38,16 +39,18 @@ func (s *Token) GetClaimValue(token *jwt.Token, key string) (interface{}, error)
 	return nil, nil
 }
 
-func (s *Token) ValidateToken() func(ctx context.Context, token string) (*jwt.Token, error) {
+func (s *Token) ValidateToken(ctx context.Context, token string) (*jwt.Token, error)  {
 	logger.Info("Token parsed unverified")
-	return func(ctx context.Context, token string) (*jwt.Token, error) {
-		parser := jwt.Parser{}
-		parsedToken, _, err := parser.ParseUnverified(token, jwt.MapClaims{})
+	parser := jwt.Parser{}
+	parsedToken, _, err := parser.ParseUnverified(token, jwt.MapClaims{})
 		return parsedToken, err
-	}
 }
 
 func (s *Token) IsSecured() bool {
 	logger.Info("security options is not enabled by default")
 	return false
+}
+
+func (s *Token) GetTokenAttribute(ctx context.Context, claim string) (string, error) {
+	return "", nil
 }
