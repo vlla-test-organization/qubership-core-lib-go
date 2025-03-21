@@ -25,4 +25,15 @@ jobs:
       run: go build -v ./...
 
     - name: Test
-      run: go test -v ./...
+      run: go test -v ./... -coverprofile coverage.out
+
+    - name: Upload coverage report to SonarCloud
+      uses: SonarSource/sonarcloud-github-action@v2
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      with:
+        args: >
+          -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY }}
+          -Dsonar.organization=${{ vars.SONAR_ORGANIZATION }}
+          -Dsonar.host.url=${{ vars.SONAR_HOST_URL }}
+          -Dsonar.go.coverage.reportPaths=coverage.out
