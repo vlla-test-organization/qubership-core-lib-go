@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"sync"
+	"sync/atomic"
 	"time"
 )
 
@@ -60,6 +61,7 @@ type subscribersRegistry struct {
 	registry map[SubscriptionId]EventHandler
 	notifyCh chan Event
 	sync.RWMutex
+	eventsCounter atomic.Int32
 }
 
 func (s *subscribersRegistry) generateId() SubscriptionId {
@@ -78,11 +80,13 @@ func (s *subscribersRegistry) regCopy() map[SubscriptionId]EventHandler {
 
 func (s *subscribersRegistry) notify(e Event) {
 	s.notifyCh <- e
+	s.eventsCounter.Add(1)
 }
 
 func (s *subscribersRegistry) spawnListener() {
 	go func() {
 		for event := range s.notifyCh {
+			s.eventsCounter.Add(-1)
 			for _, handlerF := range s.regCopy() {
 				_ = handlerF(event)
 			}

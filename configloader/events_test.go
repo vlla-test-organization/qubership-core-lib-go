@@ -6,6 +6,7 @@ import (
 	"os"
 	"sync"
 	"testing"
+	"time"
 )
 
 func TestMain(m *testing.M) {
@@ -66,6 +67,9 @@ func TestNotifyWhenNoSubscribers(t *testing.T) {
 	defer cleanupSubscribersRegistry()
 	assert.Empty(t, subscribers.registry)
 	subscribers.notify(Event{Type: InitedEventT})
+	for subscribers.eventsCounter.Load() > 0 {
+		time.Sleep(10 * time.Millisecond)
+	}
 }
 
 func TestNotifyNotConflictsWithUnSubscribe(t *testing.T) {
@@ -114,9 +118,9 @@ func TestDataAtEventParamIsPossible(t *testing.T) {
 			if e.Data != nil {
 				gotData = e.Data.(dataCorrespondsToNotImplementedEventT)
 			}
+			assert.Equal(t, "param-val", gotData.val)
+			close(over)
 		}
-		assert.Equal(t, "param-val", gotData.val)
-		close(over)
 		return nil
 	}
 
