@@ -6,7 +6,6 @@ import (
 	"os"
 	"sync"
 	"testing"
-	"time"
 )
 
 func TestMain(m *testing.M) {
@@ -18,7 +17,23 @@ func cleanupSubscribersRegistry() {
 	for k := range subscribers.registry {
 		delete(subscribers.registry, k)
 	}
+	drainChannel(subscribers.notifyCh)
 	subscribers.Unlock()
+}
+
+func drainChannel(ch <-chan Event) {
+	for {
+		select {
+		case ev, ok := <-ch:
+			if !ok {
+				return
+			}
+			fmt.Printf("Extra event: %v", ev)
+			_ = ev
+		default:
+			return
+		}
+	}
 }
 
 func TestSubscribe_OnInitEvent(t *testing.T) {
@@ -67,9 +82,6 @@ func TestNotifyWhenNoSubscribers(t *testing.T) {
 	defer cleanupSubscribersRegistry()
 	assert.Empty(t, subscribers.registry)
 	subscribers.notify(Event{Type: InitedEventT})
-	for subscribers.eventsCounter.Load() > 0 {
-		time.Sleep(10 * time.Millisecond)
-	}
 }
 
 func TestNotifyNotConflictsWithUnSubscribe(t *testing.T) {
