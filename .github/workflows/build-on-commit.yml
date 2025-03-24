@@ -24,7 +24,7 @@ jobs:
     - name: Build
       run: go build -v ./...
 
-    - name: Test
+    - name: Test with coverage
       run: go test -v ./... -coverprofile coverage.out
 
     - name: Upload coverage report to SonarCloud
