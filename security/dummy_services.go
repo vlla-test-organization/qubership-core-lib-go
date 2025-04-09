@@ -1,4 +1,4 @@
-package serviceloader
+package security
 
 import (
 	"context"
@@ -14,7 +14,6 @@ type TokenProvider interface {
 	GetToken(ctx context.Context) (string, error)
 	ValidateToken(ctx context.Context, token string) (*jwt.Token, error) 
 	GetClaimValue(token *jwt.Token, key string) (interface{}, error)
-	IsSecured() bool
 	GetTokenAttribute(ctx context.Context, claim string) (string, error)
 }
 
@@ -44,11 +43,6 @@ func (s *Token) ValidateToken(ctx context.Context, token string) (*jwt.Token, er
 	parser := jwt.Parser{}
 	parsedToken, _, err := parser.ParseUnverified(token, jwt.MapClaims{})
 		return parsedToken, err
-}
-
-func (s *Token) IsSecured() bool {
-	logger.Info("security options is not enabled by default")
-	return false
 }
 
 func (s *Token) GetTokenAttribute(ctx context.Context, claim string) (string, error) {
