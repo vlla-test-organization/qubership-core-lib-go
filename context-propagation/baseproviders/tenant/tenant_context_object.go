@@ -10,11 +10,6 @@ type TenantContextObject struct {
 	tenant string
 }
 
-type TenantProviderI interface {
-	GetTenantId(ctx context.Context) (string, error)
-}
-
-
 const (
     TenantContextName = "Tenant-Context"
     TenantHeader = "Tenant"
@@ -37,14 +32,6 @@ func (contextObject TenantContextObject) Serialize() (map[string]string, error) 
 	} else {
 		return nil, nil
 	}
-}
-
-func (contextObject TenantContextObject) GetTenantId(ctx context.Context) (string, error) {
-	tenantContextObj, err := Of(ctx);
-	if err == nil {
-		return tenantContextObj.GetTenant(), err
-	}
-	return "-", err
 }
 
 func Of(ctx context.Context) (*TenantContextObject, error) {
