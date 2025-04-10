@@ -38,10 +38,10 @@ func (s *DummyToken) GetClaimValue(token *jwt.Token, key string) (interface{}, e
 }
 
 func (s *DummyToken) ValidateToken(ctx context.Context, token string) (*jwt.Token, error)  {
-	logger.Info("Token parsed unverified")
+	logger.Info("DummyToken parsed unverified")
 	parser := jwt.Parser{}
-	parsedToken, _, err := parser.ParseUnverified(token, jwt.MapClaims{})
-		return parsedToken, err
+	parsedToken, _, _ := parser.ParseUnverified(token, jwt.MapClaims{})
+	return parsedToken, nil
 }
 
 func (s *DummyToken) GetTokenAttribute(ctx context.Context, claim string) (string, error) {
