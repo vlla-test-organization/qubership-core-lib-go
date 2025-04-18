@@ -13,7 +13,6 @@ type TenantContextObject struct {
 const (
     TenantContextName = "Tenant-Context"
     TenantHeader = "Tenant"
-	TenantContextLevel  = -100
 	)
 
 func NewTenantContextObject(tenant string) TenantContextObject {
@@ -23,6 +22,10 @@ func NewTenantContextObject(tenant string) TenantContextObject {
 }
 
 func (contextObject TenantContextObject) GetTenant() string {
+	return contextObject.tenant
+}
+
+func (contextObject TenantContextObject) GetLogValue() string {
 	return contextObject.tenant
 }
 

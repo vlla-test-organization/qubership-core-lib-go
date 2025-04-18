@@ -56,7 +56,7 @@ func Register(providers []ContextProvider) {
 	for _, provider := range providers {
 		contextName := provider.ContextName()
 		if contextProviders[contextName] != nil && contextProviders[contextName].InitLevel() > provider.InitLevel() {
-			logger.Debug("context=%s  were skipped with level:%v", provider.ContextName(), provider.InitLevel())
+			logger.Debug("context=%s  were skipped with level:%d", provider.ContextName(), provider.InitLevel())
 			break
 		}
 		contextProviders[provider.ContextName()] = provider
@@ -65,7 +65,7 @@ func Register(providers []ContextProvider) {
 	var allProviders []ContextProvider
 	for _, provider := range contextProviders {
 		allProviders = append(allProviders, provider)
-		logger.Info("context=" + provider.ContextName() + " added")
+		logger.Debug("context=%s added with init level: %d", provider.ContextName(), provider.InitLevel())
 	}
 	sortedContextProviders = sortByInitLevel(allProviders)
 	logger.Info("contexts successfully registered")

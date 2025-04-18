@@ -5,7 +5,6 @@ import (
 	"github.com/golang-jwt/jwt"
 
 	"github.com/netcracker/qubership-core-lib-go/v3/logging"
-	"github.com/netcracker/qubership-core-lib-go/v3/context-propagation/baseproviders/tenant"
 )
 
 var logger logging.Logger
@@ -48,19 +47,4 @@ func (s *DummyToken) ValidateToken(ctx context.Context, token string) (*jwt.Toke
 func (s *DummyToken) GetTokenAttribute(ctx context.Context, claim string) (string, error) {
 	logger.Info("Empty token attribute implementation")
 	return "", nil
-}
-
-type TenantContextObject struct {
-}
-
-type TenantProvider interface {
-	GetTenantId(ctx context.Context) (string, error)
-}
-
-func (contextObject TenantContextObject) GetTenantId(ctx context.Context) (string, error) {
-	tenantContextObj, err := tenant.Of(ctx);
-	if err == nil {
-		return tenantContextObj.GetTenant(), err
-	}
-	return "-", err
 }
