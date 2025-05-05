@@ -7,16 +7,14 @@ import (
 )
 
 const (
-	tenantIdClaim       = "tenant-id"
-	noTenant            = ""
-)
+	TenantContextLevel  = -100
+	)
 
 type TenantProvider struct {
 }
 
 var (
 	logger         logging.Logger
-	noTenantObject = NewTenantContextObject(noTenant)
 )
 
 func init() {
