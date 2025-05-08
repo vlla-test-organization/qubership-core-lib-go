@@ -2,9 +2,12 @@ package serviceloader
 
 import (
 	"fmt"
+	"github.com/netcracker/qubership-core-lib-go/v3/logging"
 	"reflect"
 	"sync"
 )
+
+var logger = logging.GetLogger("serviceloader")
 
 type serviceRegistration struct {
 	priority int
@@ -25,7 +28,7 @@ func Register[T any](priority int, service *T) {
 func MustLoad[T any]() T {
 	instance, found := Load[T]()
 	if !found {
-		panic(fmt.Sprintf("can not find implementation for '%s' in service loading; make sure it was register before", reflect.TypeFor[T]()))
+		panic(fmt.Sprintf("can not find implementation for `%s' in service loading; make sure it was register before", reflect.TypeFor[T]()))
 	}
 	return instance
 }
@@ -47,6 +50,7 @@ func Load[T any]() (T, bool) {
 	}
 
 	if found.instance != nil {
+		logger.Info("Located `%s' as implementation for `%s'", reflect.TypeOf(found.instance), reflect.TypeFor[T]())
 		foundCache.Store(targetType, found.instance)
 		return found.instance.(T), true
 	} else {
