@@ -10,7 +10,7 @@ type ResourceGroupAnnotationsMapper struct {
 	groups []string
 }
 
-func NewResourceGroupAnnotationMapper(groups ...string) *ResourceGroupAnnotationsMapper {
+func NewResourceGroupAnnotationsMapper(groups ...string) *ResourceGroupAnnotationsMapper {
 	return &ResourceGroupAnnotationsMapper{groups: groups}
 }
 

@@ -69,7 +69,7 @@ func TestGroupAnnotationGetter_Get(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			getter := NewResourceGroupAnnotationMapper(tt.groups...)
+			getter := NewResourceGroupAnnotationsMapper(tt.groups...)
 			val, ok := getter.Find(tt.annotations, tt.key)
 
 			if val != tt.expectedVal {
@@ -121,7 +121,7 @@ func TestGroupAnnotationMapper_Set(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			getter := NewResourceGroupAnnotationMapper(tt.groups...)
+			getter := NewResourceGroupAnnotationsMapper(tt.groups...)
 			expAnn := getter.ExtendList(tt.initAnnotations)
 			if !reflect.DeepEqual(expAnn, tt.expAnnotations) {
 				t.Errorf("expected annotations %v, got %v", tt.expAnnotations, expAnn)
