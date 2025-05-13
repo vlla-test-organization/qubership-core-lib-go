@@ -3,7 +3,7 @@ package utils
 // AnnotationMapper service loading abstraction for annotations that have different group name
 type AnnotationMapper interface {
 	Find(annotations map[string]string, key string) (string, bool)
-	ExtendList(annotations map[string]string) map[string]string
+	AddPrefix(annotations map[string]string) map[string]string
 }
 
 type ResourceGroupAnnotationsMapper struct {
@@ -23,7 +23,7 @@ func (g *ResourceGroupAnnotationsMapper) Find(annotations map[string]string, key
 	return "", false
 }
 
-func (g *ResourceGroupAnnotationsMapper) ExtendList(annotations map[string]string) map[string]string {
+func (g *ResourceGroupAnnotationsMapper) AddPrefix(annotations map[string]string) map[string]string {
 	labeledAnnotations := make(map[string]string)
 	for _, group := range g.groups {
 		for k, v := range annotations {

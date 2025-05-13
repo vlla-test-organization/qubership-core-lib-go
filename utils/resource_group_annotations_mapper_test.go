@@ -122,7 +122,7 @@ func TestGroupAnnotationMapper_Set(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			getter := NewResourceGroupAnnotationsMapper(tt.groups...)
-			expAnn := getter.ExtendList(tt.initAnnotations)
+			expAnn := getter.AddPrefix(tt.initAnnotations)
 			if !reflect.DeepEqual(expAnn, tt.expAnnotations) {
 				t.Errorf("expected annotations %v, got %v", tt.expAnnotations, expAnn)
 			}
