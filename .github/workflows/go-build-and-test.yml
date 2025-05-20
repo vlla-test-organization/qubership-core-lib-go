@@ -1,0 +1,15 @@
+name: Go build, test and send report to sonar
+
+on:
+  push:
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+
+jobs:
+  build:
+    uses: netcracker/qubership-workflow-hub/.github/workflows/go-build-with-sonar.yaml@main
+    with:
+      go-version: 1.23
+      sonar-project-key: ${{ vars.SONAR_PROJECT_KEY }}
+    secrets:
+      sonar-token: ${{ secrets.SONAR_TOKEN }}
