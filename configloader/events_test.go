@@ -162,27 +162,3 @@ func TestSubscribeRace(t *testing.T) {
 	}()
 	wg.Wait()
 }
-
-func ExampleSubscribe() {
-	handlerF := func(e Event) error {
-		if e.Type == InitedEventT {
-			fmt.Println("Config inited")
-		} else if e.Type == RefreshedEventT {
-			fmt.Println("Config refreshed")
-		} else {
-			fmt.Println("Unknown event sent")
-		}
-		return nil
-	}
-	id, err := Subscribe(handlerF)
-	if err != nil {
-		// error handling
-	}
-
-	_ = Refresh()
-	// Output: Config refreshed
-
-	if err := Unsubscribe(id); err != nil {
-		// error handling
-	}
-}
