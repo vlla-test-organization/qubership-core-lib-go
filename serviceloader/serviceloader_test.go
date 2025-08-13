@@ -1,6 +1,7 @@
 package serviceloader
 
 import (
+	"github.com/netcracker/qubership-core-lib-go/v3/logging"
 	"github.com/stretchr/testify/assert"
 	"reflect"
 	"sync"
@@ -69,6 +70,10 @@ func TestPriority(t *testing.T) {
 }
 
 func TestConcurrentAccess(t *testing.T) {
+	currentLvl := logger.GetLevel()
+	logger.SetLevel(logging.LvlWarn)
+	defer logger.SetLevel(currentLvl)
+
 	services = make([]serviceRegistration, 0)
 	foundCache = &sync.Map{}
 
