@@ -7,10 +7,10 @@ import (
 	"os"
 	"testing"
 
-	"github.com/netcracker/qubership-core-lib-go/v3/configloader"
-	"github.com/netcracker/qubership-core-lib-go/v3/context-propagation/baseproviders/allowedheaders"
-	"github.com/netcracker/qubership-core-lib-go/v3/context-propagation/ctxmanager"
 	"github.com/stretchr/testify/assert"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v3/configloader"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v3/context-propagation/baseproviders/allowedheaders"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v3/context-propagation/ctxmanager"
 )
 
 const test_context_value = "test_value"

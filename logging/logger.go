@@ -11,8 +11,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/netcracker/qubership-core-lib-go/v3/configloader"
 	lock "github.com/viney-shih/go-lock"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v3/configloader"
 )
 
 // List of predefined log Levels

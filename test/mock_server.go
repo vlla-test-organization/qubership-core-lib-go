@@ -5,14 +5,14 @@ import (
 	"net/http/httptest"
 	"strings"
 
-	"github.com/netcracker/qubership-core-lib-go/v3/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v3/logging"
 )
 
 var (
 	mockHandlers []mockHandler
 	mockServer   *httptest.Server
 	started      = false
-	logger logging.Logger
+	logger       logging.Logger
 )
 
 type mockHandler struct {

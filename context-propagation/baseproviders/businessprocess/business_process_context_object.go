@@ -3,7 +3,7 @@ package businessprocess
 import (
 	"context"
 	"errors"
-	"github.com/netcracker/qubership-core-lib-go/v3/context-propagation/ctxmanager"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v3/context-propagation/ctxmanager"
 )
 
 const BUSINESS_PROCESS_HEADER_NAME = "Business-Process-Id"

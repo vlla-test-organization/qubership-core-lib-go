@@ -3,18 +3,18 @@ package tenant
 import (
 	"context"
 	"errors"
-	"github.com/netcracker/qubership-core-lib-go/v3/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v3/logging"
 )
 
 const (
-	TenantContextLevel  = -100
-	)
+	TenantContextLevel = -100
+)
 
 type TenantProvider struct {
 }
 
 var (
-	logger         logging.Logger
+	logger logging.Logger
 )
 
 func init() {
@@ -53,5 +53,3 @@ func (tenantProvider TenantProvider) Set(ctx context.Context, object interface{}
 func (tenantProvider TenantProvider) Get(ctx context.Context) interface{} {
 	return ctx.Value(TenantContextName)
 }
-
-

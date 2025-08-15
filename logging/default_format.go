@@ -13,7 +13,7 @@ const (
 	timeFormat           = "2006-01-02T15:04:05.000"
 	CallerPropertyName   = "caller"
 	valuePlaceholder     = "-"
-	RequestIdContextName = "X-Request-Id"   // see implementation in github.com/netcracker/qubership-core-lib-go/v3/context-propagation/xrequestid
+	RequestIdContextName = "X-Request-Id" // see implementation in github.com/vlla-test-organization/qubership-core-lib-go/v3/context-propagation/xrequestid
 	TenantContextName    = "Tenant-Context"
 )
 

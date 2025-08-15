@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/netcracker/qubership-core-lib-go/v3/context-propagation/ctxmanager"
 	"github.com/stretchr/testify/assert"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v3/context-propagation/ctxmanager"
 )
 
 const x_version_value = "V2"

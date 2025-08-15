@@ -3,8 +3,8 @@ package ctxhelper
 import (
 	"context"
 
-	"github.com/netcracker/qubership-core-lib-go/v3/context-propagation/ctxmanager"
-	"github.com/netcracker/qubership-core-lib-go/v3/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v3/context-propagation/ctxmanager"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v3/logging"
 )
 
 var logger logging.Logger

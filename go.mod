@@ -1,4 +1,4 @@
-module github.com/netcracker/qubership-core-lib-go/v3
+module github.com/vlla-test-organization/qubership-core-lib-go/v3
 
 go 1.23
 

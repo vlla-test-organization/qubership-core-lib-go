@@ -2,8 +2,8 @@ package tenant
 
 import (
 	"context"
-	"github.com/netcracker/qubership-core-lib-go/v3/context-propagation/ctxmanager"
 	"github.com/pkg/errors"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v3/context-propagation/ctxmanager"
 )
 
 type TenantContextObject struct {
@@ -11,9 +11,9 @@ type TenantContextObject struct {
 }
 
 const (
-    TenantContextName = "Tenant-Context"
-    TenantHeader = "Tenant"
-	)
+	TenantContextName = "Tenant-Context"
+	TenantHeader      = "Tenant"
+)
 
 func NewTenantContextObject(tenant string) TenantContextObject {
 	return TenantContextObject{

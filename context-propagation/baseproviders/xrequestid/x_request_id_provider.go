@@ -3,7 +3,7 @@ package xrequestid
 import (
 	"context"
 	"errors"
-	"github.com/netcracker/qubership-core-lib-go/v3/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v3/logging"
 )
 
 const X_REQUEST_ID_COTEXT_NAME = "X-Request-Id"

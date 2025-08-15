@@ -3,7 +3,7 @@ package originatingbiid
 import (
 	"context"
 	"errors"
-	"github.com/netcracker/qubership-core-lib-go/v3/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v3/logging"
 )
 
 const ORIGINATING_BI_ID_CONTEXT_NAME = "originating-bi-id"

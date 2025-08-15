@@ -2,7 +2,7 @@ package clientip
 
 import (
 	"context"
-	"github.com/netcracker/qubership-core-lib-go/v3/context-propagation/ctxmanager"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v3/context-propagation/ctxmanager"
 )
 
 const X_NC_CLIENT_IP_HEADER_NAME = "X-Nc-Client-Ip"
