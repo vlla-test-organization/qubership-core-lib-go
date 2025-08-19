@@ -75,3 +75,5 @@ test_tmp_**
 .idea
 # Go test coverage
 cover.out
+# Added by goreleaser init:
+dist/
