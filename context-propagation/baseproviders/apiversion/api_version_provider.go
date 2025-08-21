@@ -3,7 +3,7 @@ package apiversion
 import (
 	"context"
 	"errors"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v7/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v4/logging"
 )
 
 const (

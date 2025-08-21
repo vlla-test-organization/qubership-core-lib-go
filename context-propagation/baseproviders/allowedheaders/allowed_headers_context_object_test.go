@@ -9,8 +9,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/vlla-test-organization/qubership-core-lib-go/v7/configloader"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v7/context-propagation/ctxmanager"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v4/configloader"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v4/context-propagation/ctxmanager"
 )
 
 const CUSTOM_HEADER_2 = "Custom-header-2"

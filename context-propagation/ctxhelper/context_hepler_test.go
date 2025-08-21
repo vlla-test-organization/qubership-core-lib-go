@@ -8,9 +8,9 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v7/configloader"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v7/context-propagation/baseproviders/allowedheaders"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v7/context-propagation/ctxmanager"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v4/configloader"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v4/context-propagation/baseproviders/allowedheaders"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v4/context-propagation/ctxmanager"
 )
 
 const test_context_value = "test_value"

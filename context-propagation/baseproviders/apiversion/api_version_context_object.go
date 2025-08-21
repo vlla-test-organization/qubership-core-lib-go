@@ -3,7 +3,7 @@ package apiversion
 import (
 	"context"
 	"errors"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v7/context-propagation/ctxmanager"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v4/context-propagation/ctxmanager"
 	"strings"
 )
 
