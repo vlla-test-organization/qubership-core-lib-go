@@ -2,8 +2,6 @@ module github.com/vlla-test-organization/qubership-core-lib-go/v3
 
 go 1.23
 
-retract v3.0.1
-
 require (
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/knadh/koanf/maps v0.1.1
