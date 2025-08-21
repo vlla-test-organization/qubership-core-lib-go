@@ -12,7 +12,7 @@ import (
 	"time"
 
 	lock "github.com/viney-shih/go-lock"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v3/configloader"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v5/configloader"
 )
 
 // List of predefined log Levels

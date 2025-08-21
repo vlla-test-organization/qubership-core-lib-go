@@ -3,7 +3,7 @@ package xversion
 import (
 	"context"
 	"errors"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v3/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v5/logging"
 )
 
 const X_VERSION_CONTEXT_NAME = "X-Version"

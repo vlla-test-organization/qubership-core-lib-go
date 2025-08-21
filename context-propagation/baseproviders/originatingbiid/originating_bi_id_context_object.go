@@ -3,7 +3,7 @@ package originatingbiid
 import (
 	"context"
 	"errors"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v3/context-propagation/ctxmanager"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v5/context-propagation/ctxmanager"
 )
 
 const ORIGINATING_BI_ID_HEADER_NAME = "originating-bi-id"

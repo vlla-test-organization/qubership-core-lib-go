@@ -2,7 +2,7 @@ package xversionname
 
 import (
 	"context"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v3/context-propagation/ctxmanager"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v5/context-propagation/ctxmanager"
 )
 
 const X_VERSION_NAME_HEADER_NAME = "X-Version-Name"

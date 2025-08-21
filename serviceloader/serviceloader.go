@@ -2,7 +2,7 @@ package serviceloader
 
 import (
 	"fmt"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v3/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v5/logging"
 	"reflect"
 	"sync"
 )

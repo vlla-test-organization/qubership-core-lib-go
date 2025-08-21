@@ -10,7 +10,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/viney-shih/go-lock"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v3/configloader"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v5/configloader"
 )
 
 func TestLogger_SetLevel(t *testing.T) {

@@ -3,7 +3,7 @@ package acceptlanguage
 import (
 	"context"
 	"errors"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v3/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v5/logging"
 )
 
 type AcceptLanguageProvider struct {
