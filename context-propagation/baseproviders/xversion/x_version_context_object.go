@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/vlla-test-organization/qubership-core-lib-go/v6/context-propagation/ctxmanager"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v7/context-propagation/ctxmanager"
 )
 
 const X_VERSION_HEADER_NAME = "X-Version"

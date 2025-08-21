@@ -5,8 +5,8 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/vlla-test-organization/qubership-core-lib-go/v6/configloader"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v6/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v7/configloader"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v7/logging"
 )
 
 const (

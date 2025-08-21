@@ -3,7 +3,7 @@ package tenant
 import (
 	"context"
 	"github.com/pkg/errors"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v6/context-propagation/ctxmanager"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v7/context-propagation/ctxmanager"
 )
 
 type TenantContextObject struct {
