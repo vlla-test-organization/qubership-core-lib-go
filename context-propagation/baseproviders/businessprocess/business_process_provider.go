@@ -3,7 +3,7 @@ package businessprocess
 import (
 	"context"
 	"errors"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v5/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v6/logging"
 )
 
 const BUSINESS_PROCESS_CONTEXT_NAME = "Business-Process-Id"

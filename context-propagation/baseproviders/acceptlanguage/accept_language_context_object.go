@@ -3,7 +3,7 @@ package acceptlanguage
 import (
 	"context"
 	"errors"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v5/context-propagation/ctxmanager"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v6/context-propagation/ctxmanager"
 	"strings"
 )
 

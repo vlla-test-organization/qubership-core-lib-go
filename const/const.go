@@ -1,7 +1,7 @@
 package constants
 
 import (
-	tlsUtils "github.com/vlla-test-organization/qubership-core-lib-go/v5/utils"
+	tlsUtils "github.com/vlla-test-organization/qubership-core-lib-go/v6/utils"
 )
 
 const (
