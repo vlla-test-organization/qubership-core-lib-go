@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/vlla-test-organization/qubership-core-lib-go/v4/context-propagation/ctxmanager"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v5/context-propagation/ctxmanager"
 )
 
 type allowedHeaderContextObject struct {

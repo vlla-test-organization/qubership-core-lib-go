@@ -3,7 +3,7 @@ package originatingbiid
 import (
 	"context"
 	"github.com/stretchr/testify/assert"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v4/context-propagation/ctxmanager"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v5/context-propagation/ctxmanager"
 	"testing"
 )
 

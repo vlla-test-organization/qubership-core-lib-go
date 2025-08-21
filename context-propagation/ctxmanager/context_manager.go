@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/vlla-test-organization/qubership-core-lib-go/v4/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v5/logging"
 )
 
 // Context objects which implement SerializableContext will be used to propagate their value to outgoing requests

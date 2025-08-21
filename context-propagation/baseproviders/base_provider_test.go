@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v4/configloader"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v5/configloader"
 )
 
 func init() {
