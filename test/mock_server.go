@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"strings"
 
-	"github.com/vlla-test-organization/qubership-core-lib-go/v5/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v6/logging"
 )
 
 var (
