@@ -3,7 +3,7 @@ package businessprocess
 import (
 	"context"
 	"github.com/stretchr/testify/assert"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v6/context-propagation/ctxmanager"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v7/context-propagation/ctxmanager"
 	"testing"
 )
 

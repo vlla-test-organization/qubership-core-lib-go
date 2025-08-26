@@ -2,7 +2,7 @@ package serviceloader
 
 import (
 	"github.com/stretchr/testify/assert"
-	"github.com/vlla-test-organization/qubership-core-lib-go/v6/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v7/logging"
 	"reflect"
 	"sync"
 	"testing"
