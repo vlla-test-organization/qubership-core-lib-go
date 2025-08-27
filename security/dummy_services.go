@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/golang-jwt/jwt"
 
-	"github.com/vlla-test-organization/qubership-core-lib-go/v7/logging"
+	"github.com/vlla-test-organization/qubership-core-lib-go/v8/logging"
 )
 
 var logger logging.Logger

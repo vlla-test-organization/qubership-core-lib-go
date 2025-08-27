@@ -1,4 +1,4 @@
-module github.com/vlla-test-organization/qubership-core-lib-go/v7
+module github.com/vlla-test-organization/qubership-core-lib-go/v8
 
 go 1.23
 
